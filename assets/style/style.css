@@ -1,0 +1,317 @@
+/* --------------------------DOCUMENT-------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* --------------------------BODY-------------------------- */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------HEADER-------------------------- */
+header {
+    display: inline;
+}
+
+nav {
+    background-color: rgb(254, 217, 76);
+    padding: 5px;
+    top: 0;
+    overflow: hidden;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: large;
+    color: black;
+    letter-spacing: 0.10em;
+    position: relative;
+    padding: 5px 0px;
+}
+
+nav a::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+nav a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+nav img{
+    width: 70px;
+} 
+
+.logo {
+    float: left;
+}
+
+.hidenav .icon {
+    display: none;
+}
+
+.jumbotron {
+    background-image: url("../image/jumbobo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px;
+    overflow: auto;
+}
+
+.jumbotron img {
+    width: 500px;
+    float: left;
+}
+
+.info {
+    float: right;
+    margin-top: 150px;
+    color: rgb(201, 111, 2);
+}
+
+.info h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.info p {
+    font-size: medium;    
+}
+
+/* --------------------------MAIN-------------------------- */
+main {
+    padding: 10px;
+    overflow: auto;
+}
+
+.dalil h1 {
+    font-family: Anton, Assyrian, sans-serif;
+    font-size: 2.3em;
+    letter-spacing: 0.10em;
+    text-shadow: 3px 3px 1px yellow;
+    text-align: center;
+}
+
+.dalil h2 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+}
+
+#content {
+    float: left;
+    width: 75%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 2em;
+    transition-duration: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 50px yellow;
+}
+.card h1 {
+    text-align: center;
+    text-decoration: yellow solid underline;
+    text-underline-position: under;
+}
+
+.card h3 {
+    color: rgb(145, 145, 0);
+}
+
+/* --------------------------FLEXBOX-------------------------- */
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.flex-container-row {
+    display: flex;
+}
+
+.box {
+    flex-basis: 33%;
+    text-align: center;
+    padding: 40px;
+    margin: 5px;
+    border-radius: 30px;
+    background: linear-gradient(white, yellow, orange);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.box img {
+    width: 150px;
+}
+
+.box h2 {
+    color: rgb(209, 137, 3);
+}
+
+.box p {
+    color: gray;
+    font-size: smaller;
+}
+
+.double {
+    flex-basis: 50%;
+}
+
+/* --------------------------ASIDE-------------------------- */
+aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+}
+
+aside figure {
+    text-align: center;
+}
+
+aside figure img {
+    width: 200px;
+    clip-path: circle(80px);
+    transition-duration: 2s;
+}
+
+aside figure img:hover {
+    clip-path: none;
+    box-shadow: 0px 0px 50px yellow;
+}
+
+aside h3 {
+    text-align: center;
+}
+
+aside table th{
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* --------------------------BACK TO TOP-------------------------- */
+.top {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
+
+.top img {
+    width: 40px;
+}
+
+/* --------------------------FOOTER-------------------------- */
+footer {
+    padding: 20px;
+    color: black;
+    background-color: rgb(254, 217, 76);
+    text-align: center;
+    font-weight: bold;
+}
+
+.love {
+    color: red;
+    font-size: 1.2em;
+}
+
+/* --------------------------RESPONSIVE MEDIA-------------------------- */
+@media screen and (max-width: 1300px) {
+    #content,                       /* Merubah posisi aside jadi kebawah */
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+
+    .hidenav a {                    /* Hide list */
+        display: none;
+    }
+
+    .hidenav a.icon {               /* Tampil tombol menu */
+        float: right;
+        display: block;
+        top: 20px;
+        right: 18px;
+    }
+
+    .hidenav.responsive {           /* Tambah class pada hidenav */
+        position: relative;
+        height: 250px;
+    }
+    
+    .hidenav.responsive .icon {     /* Muncul list saat klik Menu */
+        position: absolute;
+        top: 20px;
+        right: 18px;
+    }
+    
+    .hidenav.responsive ul {        /* List display */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hidenav.responsive li {
+        float: none;
+    }
+
+    .hidenav.responsive li a {
+        top: 30px;
+        display: block;
+        text-align: right;
+        width: 100%;
+        color: rgb(145, 145, 0);
+    }
+
+    .jumbotron {                    /* Merubah ukuran jumbotron beserta gambar dan teks didalamnya */
+        padding: 10px;
+    }
+
+    .jumbotron img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        color: rgb(201, 111, 2);
+    }
+
+    .flex-container-row {           /* Merubah tampilan flex pada harga hewan qurban */
+        flex-direction: column;
+    }
+}
